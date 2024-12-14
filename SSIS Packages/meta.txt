@@ -1,0 +1,23 @@
+CREATE TABLE [dimProduct] (
+    [Product_ID] INTEGER IDENTITY(1,1) PRIMARY KEY,
+    [UPC] varchar(50),
+    [NITEM] varchar(50),
+    [Category] varchar(50)
+)
+
+FISH 
+DAIRY
+MEAT
+VIDEO
+CHEESE
+WINE
+
+        string[] categories = { "FISH", "DAIRY", "MEAT", "VIDEO", "CHEESE", "WINE" };
+
+        for(int i =0; i < categories.Length; i++)
+        {
+            Output0Buffer.AddRow();
+            Output0Buffer.Category = categories[i];
+            Output0Buffer.UPC = "8916691954" + (i + 1);
+            Output0Buffer.NITEM = "351530" + (i + 1);
+        }
